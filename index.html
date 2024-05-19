@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="styles.css">
+    <title>Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: rgb(255, 255, 255);
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #ffffff;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        .logo {
+            width: 100px;
+            height: auto;
+        }
+        nav {
+            flex-grow: 1;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            font-size: 20px;
+            display: inline-block;
+        }
+        li {
+            display: inline;
+            margin: 0 15px; 
+        }
+        a {
+            color: rgb(0, 0, 0);
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 1600px; 
+            height: 750px; 
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .prev {
+            left: 10px;
+        }
+        .next {
+            right: 10px;
+        }
+        p {
+            text-align: center;
+            background-color: #8a8a8a;
+            color: white;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="l"></div><br>
+    <!--MENU SA TAAS-->
+    <nav class="links">
+        <img src="rtad.png" alt="Logo">
+        <ul>
+            <li><a href="E_Home.html">Home</a></li>
+            <li><a href="Products.html">Products</a></li>
+            <li><a href="AboutUs.html">About Us</a></li>
+            <li><a href="ContactUs.html">Contact Us</a></li>
+        </ul>
+        <input class="input" name="text" placeholder="Search..." type="search">
+    </nav>     
+    </div>
+
+    <div class="slider-container">
+        <div class="slides">
+            <img src="WEB HOME PAGE.png" alt="Slide 1">
+            <img src="7(3).png" alt="Slide 2">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.querySelectorAll('.slides img');
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            slides[slideIndex - 1].style.display = 'block';
+            setTimeout(showSlides, 5000); 
+        }
+
+        function changeSlide(n) {
+            let slides = document.querySelectorAll('.slides img');
+            slides.forEach((slide, index) => {
+                slide.style.display = 'none';
+            });
+            slideIndex += n;
+            if (slideIndex > slides.length) {slideIndex = 1}
+            if (slideIndex < 1) {slideIndex = slides.length}
+            slides[slideIndex - 1].style.display = 'block';
+        }
+    </script>
+
+    <footer>
+        <div class="footerBottom">
+            <p>Copyright &copy;2024; Designed by <span class="designer">ALWYN</span></p>
+        </div>
+    </footer>
+    
+</body>
+</html>
