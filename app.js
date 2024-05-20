@@ -53,7 +53,7 @@ let products = [
     {
         id: 7,
         name: 'FRESH FOILS TEE',
-        image: 'S2S.png',
+        image: '7.png',
         price: 45
     },
     {
@@ -65,7 +65,7 @@ let products = [
     {
         id: 9,
         name: 'FRESH FOILS TEE',
-        image: 'S3S.png',
+        image: '9.png',
         price: 45
     },
     {
